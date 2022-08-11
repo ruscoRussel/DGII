@@ -59,6 +59,10 @@ const PlacaShema = Schema({
         type: String,
         require: true
     },
+    creatorPlaca: {
+        type: String,
+        require: true
+    },
 });
 
 module.exports= model('Placa', PlacaShema);

@@ -37,9 +37,9 @@ const createPlaca = async (req, res = response) => {
 
 const getPlacaList = async (req, res = response) => {
 
-    const { codigo } = req.query;
+    const { codigo,  userEmail} = req.query;
 
-    // console.log(codigo)
+    console.log(codigo,  userEmail);
 
     try {
 
@@ -50,7 +50,7 @@ const getPlacaList = async (req, res = response) => {
                 placa
             });
         }
-        placa = await Placa.find();
+        placa = await Placa.find({creatorPlaca: userEmail});
         return res.status(200).json({
             placa
         });
